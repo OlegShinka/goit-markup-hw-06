@@ -684,9 +684,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+
   background-color: rgba(46, 47, 66, 0.4);
-  opacity: 0.5;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -703,9 +702,8 @@ body {
 
   width: 408px;
   min-height: 576px;
-  z-index: 10;
-  padding-left: 24px;
-  padding-right: 24px;
+
+  padding: 72px 24px 24px;
 
   transform: translate(-50%, -50%) scale(1);
   background-color: var(--modal-bg-color);
@@ -739,19 +737,16 @@ body {
 .close-btn:focus {
   background-color: var(--active-hover-color);
   border: none;
-  fill: var(--active-hover-color);
+  fill: var(--btn-text-color);
 }
 
 .close-icon {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form {
-  position: absolute;
-  top: 72px;
-  left: 24px;
+/* .modal-form {
   width: 360px;
-}
+} */
 
 .modal-title {
   color: var(--subtitle-text-color);
@@ -761,6 +756,7 @@ body {
 
   text-align: center;
   margin-top: 0;
+  margin-bottom: 16px;
 }
 
 .modal-form-field {
@@ -817,8 +813,11 @@ body {
   fill: var(--btn-bg-color);
 }
 
-
 .modal-form-textaria {
+  margin-bottom: 16px;
+}
+
+.modal-textarea {
   display: block;
   resize: none;
   width: 100%;
@@ -841,11 +840,11 @@ body {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-textaria:focus {
+.modal-textarea:focus {
   border-color: var(--btn-bg-color);
 }
 
-.modal-form-textaria::placeholder {
+.modal-textarea::placeholder {
   columns: var(--modal-placeholder-color);
   font-weight: 400;
   font-size: 12px;
@@ -929,8 +928,12 @@ body {
   background-color: var(--btn-bg-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  cursor: pointer;
+
 }
 
 .modal-submit-btn:focus,
@@ -1037,7 +1040,7 @@ body {
 
 }
 
-.footer-label {
+.footer-form-desc {
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
@@ -1066,6 +1069,8 @@ body {
   background-color: var(--secondary-bg-color);
   border: 1px solid var(--primary-bg-color);
   border-radius: 4px;
+
+  outline: none;
 }
 
 .input-email::placeholder {
@@ -1093,7 +1098,8 @@ body {
   background-color: var(--btn-bg-color);
   padding: 8px 24px;
   border-radius: 4px;
-
+  border: none;
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
